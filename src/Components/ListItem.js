@@ -1,6 +1,12 @@
-const ListItem = ({pokemon}) => {
+const ListItem = ({pokemon, getPokemonDetails}) => {
+
+    const handleClick = (pokemon) =>{
+        const pokemonUrl = pokemon.url
+        getPokemonDetails(pokemonUrl)
+    }
+
     return (
-        <li><a href={pokemon.url}>{pokemon.name}</a></li>
+        <li onClick={() => handleClick(pokemon)}>{pokemon.name}</li>
     )
 }
 

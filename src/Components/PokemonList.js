@@ -1,9 +1,13 @@
 import ListItem from "./ListItem"
 
-const PokemonList = ({pokemonResults}) => {
+const PokemonList = ({pokemonResults, getPokemonDetails}) => {
+
+    if(!pokemonResults){
+        return null
+    }
 
     const pokemonListItem = pokemonResults.map((pokemon, index)=>{
-            return <ListItem key={index} pokemon={pokemon} />
+            return <ListItem key={index} pokemon={pokemon} getPokemonDetails={getPokemonDetails}/>
         })
 
     return (
