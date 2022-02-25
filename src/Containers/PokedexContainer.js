@@ -1,4 +1,5 @@
 import { useState , useEffect } from "react";
+import PokemonList from "../Components/PokemonList";
 
 const PokedexContainer = () => {
 
@@ -12,15 +13,12 @@ const PokedexContainer = () => {
       fetch('https://pokeapi.co/api/v2/pokemon/')
       .then(request => request.json())
       .then(data => setPokemon(data))
-
     }
-
-  
-
 
     return (
         <>
             <h2>The container</h2>
+            <PokemonList pokemonResults={pokemon.results}/>
         </>
         
     )
