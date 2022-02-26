@@ -1,4 +1,5 @@
 import ListItem from "./ListItem"
+import './PokemonList.css'
 
 const PokemonList = ({pokemonResults, getPokemonDetails, pokemonSearch, setPokemonSearch}) => {
 
@@ -18,19 +19,16 @@ const PokemonList = ({pokemonResults, getPokemonDetails, pokemonSearch, setPokem
             return <ListItem key={index} pokemon={pokemon} getPokemonDetails={getPokemonDetails}/>
         })
 
-    // const handlePokemonSearch = (event) => {
-    //     setPokemonSearch(event.target.value)
-    // }
-
     return (
-        <>
+        <div className="pokemon-list-box">
+            <h2>Gotta Catch 'em All!</h2>
             <form>
-                <input type="text" placeholder="Pokemon name" value={pokemonSearch} onChange={event => setPokemonSearch(event.target.value)}/>
+                <input type="text" placeholder="Search for pokemon" value={pokemonSearch} onChange={event => setPokemonSearch(event.target.value)}/>
             </form>
-            <ul>
+            <ul className="pokemon-list">
                 {pokemonListItem}
             </ul>
-        </>
+        </div>
     )
 }
 
