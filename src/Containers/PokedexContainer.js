@@ -6,17 +6,11 @@ const PokedexContainer = () => {
 
     const [pokemonRequest, setPokemonRequest] = useState([]);
     const [pokemonDetails, setPokemonDetails] = useState(null);
-    const [pokemonName, setPokemonName] = useState("");
-    const [searchResults, setSearchResults] = useState(null)
+    const [pokemonSearch, setPokemonSearch] = useState("");
 
     useEffect(()=>{
         getPokemonRequest();
     }, [])
-
-    // useEffect(()=>{
-    //      setSearchResults();   
-    // }, [pokemonName])
-
 
     const getPokemonRequest = function() {
       fetch('https://pokeapi.co/api/v2/pokemon/')
@@ -30,22 +24,24 @@ const PokedexContainer = () => {
         .then(data => setPokemonDetails(data))
     }
 
-    const getSearchResults = function(pokemonName){
-        const pokemonNames = pokemonRequest.results
-        const results = pokemonNames.filter(pokemon => {
-            return pokemon.name.includes(pokemonName)
-        })
-        setSearchResults(results);
-    }
+    // const getSearchResults = function(pokemonSearch){
+    //     const pokemons = pokemonRequest.results
+    //     console.log(pokemonSearch)
+    //     const results = pokemons.filter(pokemon => {
+    //         return pokemon.name.includes(pokemonSearch)
+    //     })
+    //     setPokemonSearch(results);
+    // }
 
     return (
         <>
             <h2>The container</h2>
             <PokemonList pokemonResults={pokemonRequest.results} 
             getPokemonDetails={getPokemonDetails} 
-            pokemonName={pokemonName} 
-            setPokemonName={setPokemonName} 
-            getSearchResults={getSearchResults}/>
+            pokemonSearch={pokemonSearch} 
+            setPokemonSearch={setPokemonSearch} 
+            // getSearchResults={getSearchResults}
+            />
             {pokemonDetails ? <PokemonDetails pokemonDetails={pokemonDetails}/> : null }
         </>
         
