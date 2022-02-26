@@ -26,16 +26,17 @@ const PokedexContainer = () => {
     }
 
     return (
-        <div className="container">
-            <div>
-                
+        <div >
+            <h1>Pokedex</h1>
+            <div className="container">
                 <PokemonList pokemonResults={pokemonRequest.results} 
                 getPokemonDetails={getPokemonDetails} 
                 pokemonSearch={pokemonSearch} 
                 setPokemonSearch={setPokemonSearch} 
                 />
-            </div>
+            
                 {pokemonDetails ? <PokemonDetails pokemonDetails={pokemonDetails}/> : null }
+            </div>
         </div>
         
     )

@@ -17,7 +17,7 @@ const PokemonDetails = ({pokemonDetails}) => {
     return (
         <div className="pokemon-details">
             <h3>{pokemonDetails.name}</h3>
-            <img src={pokemonDetails.sprites.front_default} alt={pokemonDetails.name} />
+            <img src={pokemonDetails.sprites.other["official-artwork"]["front_default"]} alt={pokemonDetails.name} />
             <p>Types:</p>
             <ul>
                 {pokemonType}
