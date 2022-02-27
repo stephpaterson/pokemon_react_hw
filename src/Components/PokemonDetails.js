@@ -26,6 +26,7 @@ const PokemonDetails = ({pokemonDetails}) => {
             <ul>
                 {pokemonAbility}
             </ul>
+            <button>Catch that pokemon</button>
         </div>
         
     )
