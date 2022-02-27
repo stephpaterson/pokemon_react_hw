@@ -2,7 +2,8 @@ import { useState , useEffect } from "react";
 import PokemonList from "../Components/PokemonList";
 import PokemonDetails from "../Components/PokemonDetails";
 import CaughtPokemon from "../Components/CaughtPokemon";
-import './PokemonContainer.css'
+import './PokemonContainer.css';
+import pokedex from "../pokedex.png";
 
 const PokedexContainer = () => {
 
@@ -34,7 +35,7 @@ const PokedexContainer = () => {
 
     return (
         <div >
-            <h1>Pokedex</h1>
+            <img src={pokedex} alt="Pokedex" />
             <div className="container">
                 <PokemonList pokemonResults={pokemonRequest.results} 
                 getPokemonDetails={getPokemonDetails} 

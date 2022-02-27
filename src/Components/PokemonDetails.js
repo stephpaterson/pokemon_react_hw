@@ -31,7 +31,7 @@ const PokemonDetails = ({pokemonDetails, addCaughtPokemon}) => {
             <ul>
                 {pokemonAbility}
             </ul>
-            <button value={pokemonDetails.name} onClick={handleClick}>Catch that pokemon</button>
+            <button value={pokemonDetails.name} onClick={handleClick}>Catch That Pokemon!</button>
         </div>
         
     )
