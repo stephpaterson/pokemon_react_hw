@@ -8,6 +8,7 @@ const PokedexContainer = () => {
     const [pokemonRequest, setPokemonRequest] = useState([]);
     const [pokemonDetails, setPokemonDetails] = useState(null);
     const [pokemonSearch, setPokemonSearch] = useState("");
+    const [caughtPokemon, setCaughtPokemon] = useState([])
 
     useEffect(()=>{
         getPokemonRequest();
@@ -25,6 +26,11 @@ const PokedexContainer = () => {
         .then(data => setPokemonDetails(data))
     }
 
+    const addCaughtPokemon = function(pokemon){
+        const copyCaughtPokemon = [...caughtPokemon, pokemon]
+        setCaughtPokemon(copyCaughtPokemon)
+    }
+
     return (
         <div >
             <h1>Pokedex</h1>
@@ -35,7 +41,7 @@ const PokedexContainer = () => {
                 setPokemonSearch={setPokemonSearch} 
                 />
             
-                {pokemonDetails ? <PokemonDetails pokemonDetails={pokemonDetails}/> : null }
+                {pokemonDetails ? <PokemonDetails pokemonDetails={pokemonDetails} addCaughtPokemon={addCaughtPokemon}/> : null }
             </div>
         </div>
         

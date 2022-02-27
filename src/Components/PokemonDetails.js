@@ -1,6 +1,6 @@
 import './PokemonDetails.css'
 
-const PokemonDetails = ({pokemonDetails}) => {
+const PokemonDetails = ({pokemonDetails, addCaughtPokemon}) => {
     
     if(!pokemonDetails){
         return null
@@ -13,6 +13,11 @@ const PokemonDetails = ({pokemonDetails}) => {
     const pokemonAbility = pokemonDetails.abilities.map((ability, index)=>{
         return <li key={index}>{ability.ability.name}</li>
     })
+
+    const handleClick = ()=>{
+        const foundPokemon = pokemonDetails
+        addCaughtPokemon(foundPokemon)
+    }
     
     return (
         <div className="pokemon-details">
@@ -26,7 +31,7 @@ const PokemonDetails = ({pokemonDetails}) => {
             <ul>
                 {pokemonAbility}
             </ul>
-            <button>Catch that pokemon</button>
+            <button value={pokemonDetails.name} onClick={handleClick}>Catch that pokemon</button>
         </div>
         
     )
