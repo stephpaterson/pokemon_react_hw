@@ -9,11 +9,13 @@
     font-style: normal;
     height:fit-content;
     padding: 5px 10px;
+    flex: 40%;
+    margin: 10px;
 }
 
 
 
-img{
+.pokemon-details>img{
     width: 200px;
     height: 200px;
     background-color: white;

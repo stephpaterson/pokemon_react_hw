@@ -1,6 +1,7 @@
 import { useState , useEffect } from "react";
 import PokemonList from "../Components/PokemonList";
 import PokemonDetails from "../Components/PokemonDetails";
+import CaughtPokemon from "../Components/CaughtPokemon";
 import './PokemonContainer.css'
 
 const PokedexContainer = () => {
@@ -40,9 +41,11 @@ const PokedexContainer = () => {
                 pokemonSearch={pokemonSearch} 
                 setPokemonSearch={setPokemonSearch} 
                 />
-            
+
                 {pokemonDetails ? <PokemonDetails pokemonDetails={pokemonDetails} addCaughtPokemon={addCaughtPokemon}/> : null }
+                < CaughtPokemon caughtPokemon={caughtPokemon}/>           
             </div>
+
         </div>
         
     )
