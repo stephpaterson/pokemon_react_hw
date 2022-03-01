@@ -9,12 +9,8 @@ const PokemonList = ({pokemonResults, getPokemonDetails, pokemonSearch, setPokem
 
     const pokemonListItem = 
         pokemonResults.filter(pokemon => {
-            if(pokemonSearch === ""){
-                return pokemon
-            } else if (pokemon.name.includes(pokemonSearch)){
-                return pokemon
-            }
-        
+            if (pokemon.name.includes(pokemonSearch)){
+                return pokemon}
         }).map((pokemon, index)=>{
             return <ListItem key={index} pokemon={pokemon} getPokemonDetails={getPokemonDetails}/>
         })

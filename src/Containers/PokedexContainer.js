@@ -23,7 +23,7 @@ const PokedexContainer = () => {
     }
 
     const getPokemonDetails = function(pokemonUrl){
-        fetch(`${pokemonUrl}`)
+        fetch(pokemonUrl)
         .then(request => request.json())
         .then(data => setPokemonDetails(data))
     }
